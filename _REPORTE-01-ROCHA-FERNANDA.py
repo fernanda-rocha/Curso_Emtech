@@ -22,7 +22,7 @@
 # - Usuario: **Sal01**,contraseña: **chocobo**
 # 
 
-# In[43]:
+# In[1]:
 
 
 ##Se carga el archivo lifestore_file.py
@@ -32,14 +32,14 @@ sys.path.append(r"\Users\Fer\Desktop\Curso Emtech\lifestore_file")
 import lifestore_file
 
 
-# In[44]:
+# In[2]:
 
 
 ##Se importan las listas lifestore_products, lifestore_sales, lifestore_searches
 from lifestore_file import lifestore_products, lifestore_sales, lifestore_searches
 
 
-# In[45]:
+# In[3]:
 
 
 ##Contador de las ventas totales 
@@ -57,7 +57,7 @@ for productoV in lifestore_products:
     
 
 
-# In[84]:
+# In[33]:
 
 
 '''
@@ -80,10 +80,10 @@ for productoP in lifestore_products:
     contador_precios=0
     tot_precios=0
 suma_precios =0
-promedio_mensual = total_precios[-1][3] / 9
+promedio_mensual = total_precios[-1][3] / 8
 
 
-# In[46]:
+# In[5]:
 
 
 def mayorVenta(categoria_mV):
@@ -110,7 +110,7 @@ def mayorVenta(categoria_mV):
         print('\n',or_mV,'\n')
 
 
-# In[47]:
+# In[6]:
 
 
 def menorVenta(categoria_meV):
@@ -137,7 +137,7 @@ def menorVenta(categoria_meV):
         print('\n',or_meV,'\n')
 
 
-# In[48]:
+# In[7]:
 
 
 ##Contador de las búsquedas totales
@@ -154,7 +154,7 @@ for productoS in lifestore_products:
     contador_busquedas = 0
 
 
-# In[49]:
+# In[8]:
 
 
 def mayorBusqueda(categoria_mB):
@@ -181,7 +181,7 @@ def mayorBusqueda(categoria_mB):
         print('\n',or_mB,'\n')
 
 
-# In[50]:
+# In[9]:
 
 
 def menorBusqueda(categoria_meB):
@@ -208,7 +208,7 @@ def menorBusqueda(categoria_meB):
         print('\n',or_meB,'\n')
 
 
-# In[51]:
+# In[10]:
 
 
 '''
@@ -237,7 +237,7 @@ for productoR in lifestore_products:
     
 
 
-# In[52]:
+# In[11]:
 
 
 ##Copias de la lista de reseñas 
@@ -245,7 +245,7 @@ resenas_copia = resenas.copy()
 resenas_copia2 = resenas.copy()
 
 
-# In[53]:
+# In[12]:
 
 
 '''
@@ -263,7 +263,7 @@ while resenas_copia:
     resenas_copia.remove(lista_mejorR)
 
 
-# In[54]:
+# In[13]:
 
 
 '''
@@ -281,7 +281,7 @@ while resenas_copia2:
     resenas_copia2.remove(lista_peorR)
 
 
-# In[60]:
+# In[32]:
 
 
 #Filtro de ventas por mes
@@ -298,33 +298,33 @@ octubre = []
 noviembre = []
 diciembre = []
 for mes in lifestore_sales:
-    if mes[3][4] == '1' and mes[3][3] == '0':
+    if mes[3][4] == '1' and mes[3][3] == '0' and mes[4] == 0:
         enero.append([mes[1], mes[3]]) 
-    elif mes[3][4] == '2' and mes[3][3] == '0': 
+    elif mes[3][4] == '2' and mes[3][3] == '0' and mes[4] == 0: 
         febrero.append([mes[1], mes[3]]) 
-    elif mes[3][4] == '3' and mes[3][3] == '0': 
+    elif mes[3][4] == '3' and mes[3][3] == '0' and mes[4] == 0: 
         marzo.append([mes[1], mes[3]])
-    elif mes[3][4] == '4' and mes[3][3] == '0': 
+    elif mes[3][4] == '4' and mes[3][3] == '0' and mes[4] == 0: 
         abril.append([mes[1], mes[3]])
-    elif mes[3][4] == '5' and mes[3][3] == '0': 
+    elif mes[3][4] == '5' and mes[3][3] == '0' and mes[4] == 0: 
         mayo.append([mes[1], mes[3]])
-    elif mes[3][4] == '6' and mes[3][3] == '0': 
+    elif mes[3][4] == '6' and mes[3][3] == '0' and mes[4] == 0: 
         junio.append([mes[1], mes[3]])
-    elif mes[3][4] == '7' and mes[3][3] == '0': 
+    elif mes[3][4] == '7' and mes[3][3] == '0' and mes[4] == 0: 
         julio.append([mes[1], mes[3]])
-    elif mes[3][4] == '8' and mes[3][3] == '0': 
+    elif mes[3][4] == '8' and mes[3][3] == '0' and mes[4] == 0: 
         agosto.append([mes[1], mes[3]])
-    elif mes[3][4] == '9' and mes[3][3] == '0': 
+    elif mes[3][4] == '9' and mes[3][3] == '0' and mes[4] == 0: 
         septiembre.append([mes[1], mes[3]])
-    elif mes[3][4] == '0' and mes[3][3] == '1': 
+    elif mes[3][4] == '0' and mes[3][3] == '1' and mes[4] == 0: 
         octubre.append([mes[1], mes[3]])
-    elif mes[3][4] == '1' and mes[3][3] == '1': 
+    elif mes[3][4] == '1' and mes[3][3] == '1' and mes[4] == 0: 
         noviembre.append([mes[1], mes[3]])
-    elif mes[3][4] == '2' and mes[3][3] == '1': 
+    elif mes[3][4] == '2' and mes[3][3] == '1' and mes[4] == 0: 
         diciembre.append([mes[1], mes[3]])
 
 
-# In[56]:
+# In[21]:
 
 
 def totalMes(meses): 
@@ -351,7 +351,7 @@ def totalMes(meses):
     print("El total de ganancias fue de",total_ingresos[-1][3],"pesos")
 
 
-# In[57]:
+# In[22]:
 
 
 ##Cuentas de administrador y de usuarios
@@ -359,7 +359,7 @@ usuarios_normales = [["Fer","1234"],["Miranda2","asdfg"],["Sal01","chocobo"]]
 admin = [["Admin","0000"]]
 
 
-# In[85]:
+# In[39]:
 
 
 ##Bloque principal del programa
@@ -385,7 +385,7 @@ while opciones:
                 opciones = 0
                 while opciones_admin:
                     print("\t1 Ver los productos más vendidos y más buscados por categoría")
-                    print("\t2 Ver productos menos vendidos y menos buscados")
+                    print("\t2 Ver productos menos vendidos y menos buscados por categoría")
                     print("\t3 Ver productos por reseña")
                     print("\t4 Total de ingresos y ventas")
                     print("\t5 Añadir nuevo usuario")
@@ -490,10 +490,10 @@ while opciones:
                     elif menu_admin == '3':
                         
                         print("\nEste es el top 20 de productos con mejor promedio de reseñas\n")
-                        for i in range(21):
+                        for i in range(20):
                             print( ordenar_resenaAlta[i],'\n')
                         print("\nEste es el top 20 de productos con peor promedio de reseñas\n")    
-                        for index in range(21):
+                        for index in range(20):
                             print( ordenar_resenaBaja[index],'\n')   
                         opciones_admin = 0  
                         
@@ -540,7 +540,7 @@ while opciones:
                                 opciones_opciones = 0
                             elif accion == '9':
                                 totalMes(septiembre)
-                                opciones_opciones = 0
+                                print("\nAún no hay ganancias este mes\n")
                             elif accion == '10':
                                 print("\nAún no hay ganancias este mes\n")
                                 opciones_opciones = 0
@@ -581,8 +581,8 @@ while opciones:
             if usuario[0] == user and usuario[1] == password:
                 opciones = 0
                 while opciones_usuario:
-                    print("\t1 Ver productos más vendidos")
-                    print("\t2 Ver productos menos vendidos")
+                    print("\t1 Ver los productos más vendidos y más buscados por categoría")
+                    print("\t2 Ver los productos menos vendidos y menos buscados por categoría")
                     print("\t3 Salir")
                     
                     menu_usuario = input("\nSeleccione lo que desea hacer: ")
